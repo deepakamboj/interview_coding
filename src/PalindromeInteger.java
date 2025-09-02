@@ -40,3 +40,4 @@ public class PalindromeInteger {
 //        For "abcba" (length=5 → length/2=2):
 //        range(0, 2) → [0,1] → compare a==a and b==b ✅
 //        rangeClosed(0, 2) → [0,1,2] → compares middle c==c too (unnecessary).
+
