@@ -1,6 +1,7 @@
 package simpleCoding;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -11,8 +12,10 @@ public class ElementFrequency {
         List<String> stationaryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil");
 
         Map<String,Long> countMap = stationaryList.stream()
-                                                    .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
-        System.out.println(countMap);
+                                    .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+       System.out.println(countMap);
+        
+       
     }
 
 }

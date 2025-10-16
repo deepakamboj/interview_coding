@@ -1,0 +1,41 @@
+package customEmployee;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TwoMethod {
+	static	List<Employee> employeeList = new ArrayList<>();
+	public static void main(String[] args) {
+	//List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(new Employee(101,"Deepa",35,"Female","IT",2020,80000));
+        employeeList.add(new Employee(102,"Priyanka",25,"Female","IT",1992,60000));
+        employeeList.add(new Employee(103,"Gaurav",34,"male","IT",2000,200000));
+        employeeList.add(new Employee(104,"Ravinder",39,"male","Mechnical",2015,80000));
+        employeeList.add(new Employee(105,"Anchal",38,"Female","Microbio",1996,50000));
+        employeeList.add(new Employee(106,"Ashish",25,"male","marketing",2021,30000));
+        employeeList.add(new Employee(107,"Deepak",42,"male","SolarEnergy",2025,30000));
+        System.out.println("=====Details of employees=====");
+        getEmployeeDetails();
+        System.out.println("==== Access salary through name=====");
+        getSalaryByName("Deepa");
+        System.out.println("=====Details of one employees=====");
+        getEmployeeDetails();
+        
+
+	}
+	//method to display the  details of employee
+	public static void getEmployeeDetails(){
+		employeeList.stream().forEach(System.out::println);
+	}
+	
+	//method to display the  details of one employee
+	public static void getEmployeeDetails(int id){
+		employeeList.stream().filter(e->e.getId()==id).forEach(System.out::println);
+	}
+	//method when employee name is passed it should return it's salary
+	public static void getSalaryByName(String name) { //
+		employeeList.stream().filter(e->e.getName().equalsIgnoreCase(name))
+		                     .forEach(e->System.out.println(e.getName()+" "+e.getSalary()));
+	}
+
+}

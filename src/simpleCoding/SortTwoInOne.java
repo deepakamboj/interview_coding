@@ -9,7 +9,11 @@ public class SortTwoInOne {
 
         int[] a = new int[] {4, 2, 5, 1};
         int[] b = new int[] {8, 1, 9, 5};
+        
+        //way 1
+        IntStream.concat(Arrays.stream(a),Arrays.stream(b)).sorted().distinct().forEach(x->System.out.print(x+" "));
 
+ //way 2
         int[] c = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().distinct().toArray();
         System.out.println(Arrays.toString(c));
 

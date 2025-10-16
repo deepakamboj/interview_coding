@@ -26,11 +26,9 @@ public class ExtractDuplicate {
                                            .collect(Collectors.toSet());
         System.out.println(duplicateChars);
 
-        String input = "Java Concept Of The Day".replaceAll("//s","").toLowerCase();
-        Map<String,Long> cm = Arrays.stream(input.split(""))
-                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
-
-cm.entrySet().stream()
+        String input = "Java Concept Of The Day".replaceAll("\\s","").toLowerCase();
+        Arrays.stream(input.split(""))
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().stream()
         .filter(entry->entry.getValue()>1)
         .forEach(i->System.out.println(i.getKey()));
 

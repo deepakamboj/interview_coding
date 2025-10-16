@@ -27,6 +27,7 @@ public class TopThree {
         List<Student> list = new ArrayList<>();
         for(Student s:studentList){
             list.add(s);
+            list.stream().sorted(Comparator.comparingDouble(Student::getPercentage).reversed());
           top++;
           if(top==3){
               break;

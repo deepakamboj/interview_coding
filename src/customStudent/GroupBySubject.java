@@ -10,9 +10,9 @@ public class GroupBySubject {
         studentList.add(new Student(102,"Daniel","Math",80.4));
         studentList.add(new Student(103,"Shusma","English",50.4));
         studentList.add(new Student(104,"Deepa","Hindi",90.4));
-        studentList.add(new Student(102, "Rahul", "Science", 72.5));
-        studentList.add(new Student(103, "Neha", "English", 55.8));
-        studentList.add(new Student(104, "Amit", "History", 80.0));
+        studentList.add(new Student(105, "Rahul", "Science", 72.5));
+        studentList.add(new Student(106, "Neha", "English", 55.8));
+        studentList.add(new Student(107, "Amit", "History", 80.0));
 
 //        Map<String,List<Student>> groupBySubjects = studentList.stream()
 //                .collect(Collectors.groupingBy(Student::getSubject));
@@ -30,6 +30,9 @@ public class GroupBySubject {
         for(Student s : studentList){
             groupMap.put(s.getSubject(),s);
         }
-        groupMap.forEach((key,value)->System.out.println(key+" "+value));
+        System.out.println("======java 7========");
+        groupMap.forEach((key,value)->System.out.println(key+"==>"+value));
+        
+        
     }
 }

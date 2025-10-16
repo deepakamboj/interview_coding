@@ -1,5 +1,7 @@
 package customEmployee;
 
+import java.util.Objects;
+
 public class Employee {
     int id;
     String name;
@@ -22,7 +24,27 @@ public class Employee {
                 '}';
     }
 
-    public int getId() {
+    @Override
+	public int hashCode() {
+		return Objects.hash(age, department, gender, id, name, salary, yearOfJoining);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return age == other.age && Objects.equals(department, other.department) && Objects.equals(gender, other.gender)
+				&& id == other.id && Objects.equals(name, other.name)
+				&& Double.doubleToLongBits(salary) == Double.doubleToLongBits(other.salary)
+				&& yearOfJoining == other.yearOfJoining;
+	}
+
+	public int getId() {
         return id;
     }
 

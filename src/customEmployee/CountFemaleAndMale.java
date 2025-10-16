@@ -20,6 +20,7 @@ public class CountFemaleAndMale {
        Map<String,Long> count = employeeList.stream()
                .collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
        count.entrySet().stream().forEach(System.out::println);
+       System.out.println(count);
         System.out.println(IntStream.range(0, 5).sum());
     }
 }

@@ -16,13 +16,18 @@ public class HighestPaid {
         employeeList.add(new Employee(105,"Anchal",38,"Female","Microbio",1996,50000));
         employeeList.add(new Employee(106,"Ashish",25,"male","marketing",2021,30000));
         employeeList.add(new Employee(107,"Deepak",42,"male","SolarEnergy",2025,30000));
-        Optional<Employee> highestPaid= employeeList.stream()
-                .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
-        System.out.println(highestPaid);
+//        Optional<Employee> highestPaid= employeeList.stream()
+//                .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
+//        System.out.println(highestPaid);
+        
+        Optional<Employee> max = employeeList.stream().max(Comparator.comparingDouble(Employee::getSalary));
+      System.out.println(max.get());
+        
 
-        Employee highestPaid1= employeeList.stream()
-                .sorted(Comparator.comparingDouble(Employee::getSalary)).findFirst().get();
-        System.out.println(highestPaid1);
+//        Employee highestPaid1= employeeList.stream()
+//                .sorted(Comparator.comparingDouble(Employee::getSalary)).findFirst().get();
+//        System.out.println(highestPaid1);
+      
         //✅ Rule of thumb:
         //Use comparing() for objects (String, LocalDate, Integer etc.)
         //Use comparingInt(), comparingLong(), comparingDouble() for primitive getters->(avoid autoboxing primitive values to wrapper)

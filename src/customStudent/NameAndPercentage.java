@@ -23,7 +23,7 @@ public class NameAndPercentage {
 
         Map<String,Double> percentage = new HashMap<String,Double>();
         for( Student student: studentList){
-            percentage.put(student.getName(),student.getPercentage());
+            percentage.put(student.getName(),student.getPercentage());//if two student with same name,this logic not work
         }
        // System.out.println(percentage);
         percentage.forEach((key,value)->System.out.println(key+" "+value));

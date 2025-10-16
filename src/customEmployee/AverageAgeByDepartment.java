@@ -17,6 +17,6 @@ public class AverageAgeByDepartment {
 
         employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment,Collectors.averagingInt(Employee::getAge)))
-                .entrySet().stream().forEach(System.out::println);
+                .entrySet().forEach(System.out::println);
     }
 }
